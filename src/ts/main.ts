@@ -1,11 +1,23 @@
 import '../scss/style.scss'
-import { exFn_1 } from '@/lib/exFn_1'
-import { exFn_2 } from '@/lib/exFn_2'
+import { FooContent } from './contents/foo'
 
 class Main {
+  private targetContent: string | null
   constructor() {
-    console.log('Initializing Application...')
-    console.log(exFn_1(), exFn_2('Ryotaro Hada'))
+    this.targetContent = document.body.getAttribute('data-page')
+    this.start()
+  }
+
+  private start(): void {
+    if (!this.targetContent) return
+    switch (this.targetContent) {
+      case 'foo':
+        new FooContent()
+        break
+
+      default:
+        break
+    }
   }
 }
 

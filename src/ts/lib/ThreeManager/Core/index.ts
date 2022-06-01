@@ -87,7 +87,7 @@ export class ThreeManagerCore {
     const controls = new OrbitControls(this.camera, this.renderer.domElement)
     controls.autoRotate = false
     controls.enableDamping = true
-    controls.maxDistance = 10
+    controls.maxDistance = 25
     controls.minDistance = 5
     controls.zoomSpeed = 0.5
     return controls

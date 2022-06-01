@@ -78,7 +78,7 @@ export class ThreeManagerCore {
       PERSPECTIVE_CAMERA_OPTIONS.fav,
       PERSPECTIVE_CAMERA_OPTIONS.aspect,
     )
-    camera.position.set(500, 800, 1000)
+    camera.position.set(1000, 1000, 1000)
     return camera
   }
 
@@ -87,7 +87,7 @@ export class ThreeManagerCore {
     const controls = new OrbitControls(this.camera, this.renderer.domElement)
     controls.autoRotate = false
     controls.enableDamping = true
-    controls.maxDistance = 25
+    controls.maxDistance = 35
     controls.minDistance = 5
     controls.zoomSpeed = 0.5
     return controls

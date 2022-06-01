@@ -27,24 +27,53 @@ export class FooContent {
   }
 
   private init(): void {
-    const box = this.genBox()
+    const box = this.genBox({
+      scale: {
+        x: 5,
+        y: 6,
+        z: 5,
+      },
+      position: {
+        x: -7.5,
+        y: 3,
+        z: 6.5,
+      },
+    })
+    const box2 = this.genBox({
+      scale: {
+        x: 5,
+        y: 1,
+        z: 11.5,
+      },
+      position: {
+        x: -7.5,
+        y: 1,
+        z: -3,
+      },
+    })
     const ground = this.genGround()
     const light = this.genLight()
-    this.scene.add(light, box, ground)
+    this.scene.add(light, box, box2, ground)
     this.render()
   }
 
-  private genBox(): Mesh {
-    const mat = new MeshLambertMaterial({ color: '#ff0000' })
-    const geo = new BoxGeometry(1, 1, 1)
+  private genBox({
+    scale,
+    position,
+  }: {
+    scale: { x: number; y: number; z: number }
+    position: { x: number; y: number; z: number }
+  }): Mesh {
+    const mat = new MeshLambertMaterial({ color: '#333333' })
+    const geo = new BoxGeometry(scale.x, scale.y, scale.z)
     const mesh = new Mesh(geo, mat)
-    mesh.position.set(0, 1, 0)
+    mesh.position.set(position.x, position.y, position.z)
     return mesh
   }
 
   private genGround(): Mesh {
-    const mat = new MeshLambertMaterial({ color: '#ffff00' })
-    const geo = new BoxGeometry(20, 1, 20)
+    const mat = new MeshLambertMaterial({ color: '#c9c9c9' })
+    const geo = new BoxGeometry(22, 1, 20)
     const mesh = new Mesh(geo, mat)
     return mesh
   }

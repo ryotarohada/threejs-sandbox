@@ -64,7 +64,7 @@ export class ThreeManagerCore {
     const renderer = new WebGLRenderer(options)
     renderer.setSize(this.width, this.height)
     renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.setClearColor(new Color(0xeeeeee))
+    renderer.setClearColor(new Color(0xffffff))
     renderer.shadowMap.enabled = true
     return renderer
   }
@@ -78,7 +78,7 @@ export class ThreeManagerCore {
       PERSPECTIVE_CAMERA_OPTIONS.fav,
       PERSPECTIVE_CAMERA_OPTIONS.aspect,
     )
-    camera.position.set(1000, 1000, 1000)
+    camera.position.set(1000, 500, 800)
     return camera
   }
 
@@ -102,7 +102,7 @@ export class ThreeManagerCore {
   }
 
   private setAxesHelper(): void {
-    const axesBarLength = 5.0
+    const axesBarLength = 50.0
     const axesHelper = new AxesHelper(axesBarLength)
     this.scene.add(axesHelper)
   }

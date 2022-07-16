@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.35",
+    "@types/noisejs": "^0.0.28",
     "@types/three": "^0.141.0",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
@@ -26,6 +27,7 @@
     "vite-plugin-ejs": "^1.4.4"
   },
   "dependencies": {
+    "noisejs": "^2.1.0",
     "three": "^0.141.0"
   }
 }

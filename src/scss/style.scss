@@ -1,4 +1,18 @@
 @import url(./reset.scss);
 
+.content-links {
+  margin: 100px;
+  list-style-type: circle;
+
+  li {
+    margin: 20px 0;
+
+    a {
+      font-size: 16px;
+      text-decoration: underline;
+    }
+  }
+}
+
 #myCanvas {
 }

@@ -60,11 +60,12 @@ export class ThreeManagerCore {
     const options: WebGLRendererParameters = {
       antialias: true,
       canvas: document.querySelector('#myCanvas')!,
+      alpha: true,
     }
     const renderer = new WebGLRenderer(options)
     renderer.setSize(this.width, this.height)
     renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.setClearColor(new Color(0xffffff))
+    renderer.setClearColor(0x000000)
     renderer.shadowMap.enabled = true
     return renderer
   }

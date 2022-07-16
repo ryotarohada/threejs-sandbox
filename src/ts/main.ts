@@ -1,5 +1,6 @@
 import '../scss/style.scss'
 import { FooContent } from './contents/foo'
+import { SignWave } from './contents/sign-wave'
 
 class Main {
   private targetContent: string | null
@@ -13,6 +14,10 @@ class Main {
     switch (this.targetContent) {
       case 'foo':
         new FooContent()
+        break
+
+      case 'signwave':
+        new SignWave()
         break
 
       default:

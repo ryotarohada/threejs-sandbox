@@ -15,5 +15,6 @@
     "no-unexpected-multiline": "error",
     "no-unreachable": "error",
     "import/prefer-default-export": "off"
-  }
+  },
+  "ignorePatterns": ["vite.config.ts"]
 }

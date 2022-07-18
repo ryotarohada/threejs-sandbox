@@ -32,7 +32,7 @@ export class SignWave {
 
   private addLine() {
     // @ts-ignore
-    const noise = new Noise.Noise(Math.random()) // 多分型定義ファイルおかしい
+    const noise = new Noise.Noise() // 多分型定義ファイルおかしい
 
     //ライン数
     let lineArr: any[] = []
@@ -76,6 +76,13 @@ export class SignWave {
           positions[j * 3 + 1] = y
           positions[j * 3 + 2] = z
         }
+
+        const h = Math.round((i / lineNum) * 360)
+        const s = 100
+        const l = Math.round((i / lineNum) * 100)
+        const color = new THREE.Color(`hsl(${h},${s}%,${l}%)`)
+
+        line.material.color = color
 
         line.geometry.attributes.position.needsUpdate = true
       }

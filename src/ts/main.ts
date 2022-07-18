@@ -1,6 +1,7 @@
 import '../scss/style.scss'
 import { FooContent } from './contents/foo'
 import { SignWave } from './contents/sign-wave'
+import { GLSL1Content } from './contents/glsl-1'
 
 class Main {
   private targetContent: string | null
@@ -18,6 +19,10 @@ class Main {
 
       case 'signwave':
         new SignWave()
+        break
+
+      case 'glsl-1':
+        new GLSL1Content()
         break
 
       default:
